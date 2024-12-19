@@ -1,0 +1,240 @@
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 70px 0px 50px 0px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.close-menu {
+  display: none;
+}
+
+.menu ul {
+  display: flex;
+}
+
+.menu ul li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.menu ul li a {
+  color: var(--dark-grayish-blue);
+  text-decoration: none;
+}
+
+.menu ul li a:hover {
+  color: var(--soft-red);
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  gap: 25px;
+}
+
+.main-article {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.main-article .main-article-image {
+  height: 400px;
+  background-image: url(./assets/images/image-web-3-desktop.jpg);
+  grid-column: 1 / 3;
+}
+
+.main-article h1 {
+  font-size: 4.3rem;
+  line-height: 4.3rem;
+  font-weight: 800;
+}
+
+.main-article img {
+  width: 100%;
+}
+
+.main-article .description p {
+  color: var(--dark-grayish-blue);
+  text-align: left;
+  line-height: 1.8rem;
+}
+
+.main-article .description button {
+  background-color: var(--soft-red);
+  padding: 10px 30px;
+  border: none;
+  font-weight: 700;
+  margin-top: 25px;
+  transition: 0.25s all;
+}
+
+.main-article .description button:hover {
+  background-color: var(--very-dark-blue);
+  color: var(--off-white);
+}
+
+.recent-news {
+  background-color: var(--very-dark-blue);
+  color: var(--off-white);
+  padding: 35px;
+}
+
+.recent-news h2 {
+  font-size: 2.5rem;
+  color: var(--soft-orange);
+}
+
+.recent-news .new-article {
+  padding: 35px 0;
+}
+
+.recent-news .new-article:nth-child(3) {
+  border-top: 1px solid var(--grayish-blue);
+  border-bottom: 1px solid var(--grayish-blue);
+}
+
+.recent-news .new-article h3 {
+  padding-bottom: 10px;
+}
+
+.recent-news .new-article h3 a {
+  font-size: 1.3rem;
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+.recent-news .new-article h3 a:hover {
+  color: var(--soft-orange);
+}
+
+.recent-news .new-article p {
+  color: var(--grayish-blue);
+}
+
+.news {
+  display: flex;
+  gap: 20px;
+}
+
+.news img {
+  width: 30%;
+}
+
+.news .details h2 {
+  color: var(--soft-red);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.news .details a {
+  color: var(--very-dark-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.news .details a:hover {
+  color: var(--soft-red);
+}
+
+.news .details p {
+  color: var(--dark-grayish-blue);
+  line-height: 1.8rem;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 650px;
+  }
+
+  .menu ul {
+    display: none;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--off-white);
+    right: -65%;
+    padding: 200px 30px;
+    transition: 0.5s all;
+  }
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .close-menu {
+    width: 36px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: block;
+    cursor: pointer;
+  }
+  .menu ul.active {
+    right: 0;
+    width: 65%;
+    top: 0px;
+    height: 100vh;
+  }
+  .menu ul li {
+    padding: 1rem;
+  }
+  .menu ul li a {
+    font-size: 1.2rem;
+    color: var(--very-dark-blue);
+  }
+  .overlay.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.5;
+  }
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  .main-article {
+    grid-template-columns: 1fr;
+    grid-column: 1 / 1;
+  }
+  .main-article h1 {
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+  .main-article .main-article-image {
+    height: 400px;
+    grid-column: 1 / 1;
+    background-image: url(./assets/images/image-web-3-mobile.jpg);
+  }
+}
